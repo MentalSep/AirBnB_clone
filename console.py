@@ -9,7 +9,8 @@ from models.user import User
 class HBNBCommand(cmd.Cmd):
     """Class HBNBCommand"""
     prompt = '(hbnb) '
-    classes = ["BaseModel", "User"]
+    classes = ["BaseModel", "User", "State", "City", "Amenity", "Place",
+               "Review"]
 
     def emptyline(self):
         """"overrides the default emptyline"""

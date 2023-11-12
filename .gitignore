@@ -1,6 +1,6 @@
 test.py
-models/__pycache__
-tests/test_models/__pycache__
-tests/__pycache__
+__pycache__
 .coverage
 .pytest_cache
+file.json
+htmlcov

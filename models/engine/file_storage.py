@@ -2,6 +2,7 @@
 """FilesStorage that serializes instances to a JSON file and deserializes"""
 import json
 from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:

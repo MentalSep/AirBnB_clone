@@ -8,6 +8,10 @@ from models.base_model import BaseModel
 class TestState(unittest.TestCase):
     """ Test cases for State class """
 
+    def test_docstring(self):
+        """ checks for docstrings """
+        self.assertIsNotNone(State.__doc__)
+
     def test_subclass(self):
         """ Test if State inherits from BaseModel """
         state = State()

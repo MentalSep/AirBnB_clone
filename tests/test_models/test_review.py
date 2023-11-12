@@ -7,6 +7,11 @@ from models.base_model import BaseModel
 
 class TestReview(unittest.TestCase):
     """ Test cases for Review class """
+
+    def test_docstring(self):
+        """ checks for docstrings """
+        self.assertIsNotNone(Review.__doc__)
+
     def setUp(self):
         """ Create instance global  """
         self.review = Review()

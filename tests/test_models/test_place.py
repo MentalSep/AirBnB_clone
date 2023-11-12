@@ -7,6 +7,11 @@ from models.base_model import BaseModel
 
 class TestPlace(unittest.TestCase):
     """ Test cases for Place class """
+
+    def test_docstring(self):
+        """ checks for docstrings """
+        self.assertIsNotNone(Place.__doc__)
+
     def setUp(self):
         """ Create instance """
         self.place = Place()

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Class FilesStorage that serializes instances to a JSON file and deserializes"""
+"""FilesStorage that serializes instances to a JSON file and deserializes"""
 import json
 from models.base_model import BaseModel
 

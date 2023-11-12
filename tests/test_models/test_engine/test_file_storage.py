@@ -61,7 +61,7 @@ class TestFileStorage(unittest.TestCase):
         storage.save()
         self.assertEqual(storage.reload(), None)
         f = FileStorage()
-        self.assertIsInstance(f.all(), dict)   
+        self.assertIsInstance(f.all(), dict)
         f = FileStorage()
         b = BaseModel()
         f.new(b)

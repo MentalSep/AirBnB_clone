@@ -1,3 +1,5 @@
 test.py
 models/__pycache__
 tests/test_models/__pycache__
+.coverage
+.pytest_cache

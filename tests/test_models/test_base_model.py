@@ -62,3 +62,19 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(b_dict['__class__'], 'BaseModel')
         self.assertIsInstance(b_dict['created_at'], str)
         self.assertIsInstance(b_dict['updated_at'], str)
+
+    def test_kwargs(self):
+        """Tests for kwargs"""
+        b = BaseModel()
+        b.name = "alx"
+        b.my_number = 1337
+        b_dict = b.to_dict()
+        b2 = BaseModel(**b_dict)
+        self.assertTrue(b is not b2)
+        self.assertTrue(type(b2) is BaseModel)
+        self.assertEqual(b.id, b2.id)
+        self.assertEqual(b.name, b2.name)
+        self.assertEqual(b.__dict__, b2.__dict__)
+        self.assertEqual(b.created_at, b2.created_at)
+        self.assertEqual(b.updated_at, b2.updated_at)
+        self.assertEqual(b.my_number, b2.my_number)

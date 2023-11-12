@@ -6,11 +6,19 @@ from uuid import uuid4
 
 class BaseModel:
     """BaseModel class"""
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """Constructor"""
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == 'created_at' or key == 'updated_at':
+                    self.__dict__[key] = datetime.strptime(
+                        value, '%Y-%m-%dT%H:%M:%S.%f')
+                elif key != '__class__':
+                    self.__dict__[key] = value
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """retunrs a string representation of BaseModel instance"""

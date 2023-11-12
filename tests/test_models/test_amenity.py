@@ -27,3 +27,9 @@ class TestAmenity(unittest.TestCase):
         new_amenity = Amenity()
         name = getattr(new_amenity, "name")
         self.assertIsInstance(name, str)
+
+    def test_str(self):
+        """ checks __str__ method """
+        new_amenity = Amenity()
+        string = "[Amenity] ({}) {}".format(new_amenity.id, new_amenity.__dict__)
+        self.assertEqual(string, str(new_amenity))

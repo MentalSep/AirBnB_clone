@@ -32,3 +32,8 @@ class TestState(unittest.TestCase):
             self.assertTrue(attr in new_d)
             self.assertTrue("__class__" in new_d)
 
+    def test_str(self):
+        """Test str method"""
+        state = State()
+        string = "[State] ({}) {}".format(state.id, state.__dict__)
+        self.assertEqual(string, str(state))

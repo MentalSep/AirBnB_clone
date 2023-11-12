@@ -30,3 +30,8 @@ class TestReview(unittest.TestCase):
         self.assertTrue(hasattr(self.review, 'place_id'))
         self.assertTrue(hasattr(self.review, 'user_id'))
         self.assertTrue(hasattr(self.review, 'text'))
+
+    def test_str(self):
+        """ Test Case to check __str__ method """
+        string = "[Review] ({}) {}".format(self.review.id, self.review.__dict__)
+        self.assertEqual(string, str(self.review))

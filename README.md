@@ -31,7 +31,7 @@ Then comes **the console** to help us manage the objects of the project, such us
 
 - Destroying an object
 
-### how to use
+## how to use
 
 after cloning the repository to your system and changing your working directory to the project's folder. Run `./console.py`in your terminal to open the CLI console.
 

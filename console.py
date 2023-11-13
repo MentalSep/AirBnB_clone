@@ -110,6 +110,38 @@ class HBNBCommand(cmd.Cmd):
                     setattr(storage.all()[key], args[2], args[3])
                     storage.save()
 
+    def default(self, arg):
+        """ overwrites the defalut 'default' method"""
+        args = arg.split(".")
+        if len(args) >= 2:
+            if args[1] == "all()":
+                self.do_all(args[0])
+            elif args[1] == "count()":
+                print(len([str(value) for key, value in storage.all().items()
+                           if args[0] in key]))
+            elif args[1][:5] == "show(" and args[1][-1] == ")":
+                self.do_show(args[0] + " " + args[1][6:-2])
+            elif args[1][:8] == "destroy(" and args[1][-1] == ")":
+                self.do_destroy(args[0] + " " + args[1][9:-2])
+            elif args[1][:7] == "update(" and args[1][-1] == ")":
+                args2 = args[1][7:-1].split(", ")
+                if len(args2) == 4:
+                    self.do_update(args[0] + " " + args2[0][1:-1] + " " +
+                                   args2[1][1:-1] + " " + args2[2][1:-1] +
+                                   " " + args2[3][1:-1])
+                elif len(args2) == 3:
+                    self.do_update(args[0] + " " + args2[0][1:-1] + " " +
+                                   args2[1][1:-1] + " " + args2[2][1:-1])
+                elif len(args2) == 2:
+                    self.do_update(args[0] + " " + args2[0][1:-1] + " " +
+                                   args2[1][1:-1])
+                elif len(args2) == 1:
+                    self.do_update(args[0] + " " + args2[0][1:-1])
+            else:
+                cmd.Cmd.default(self, arg)
+        else:
+            cmd.Cmd.default(self, arg)
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

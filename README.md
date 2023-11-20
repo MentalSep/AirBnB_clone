@@ -31,7 +31,7 @@ Then comes **the console** to help us manage the objects of the project, such us
 
 - Destroying an object
 
-### how to use
+## how to use
 
 after cloning the repository to your system and changing your working directory to the project's folder. Run `./console.py`in your terminal to open the CLI console.
 
@@ -44,27 +44,16 @@ In interactive mode;
 ```powershell
 
 $ ./console.py
-
 (hbnb) help
 
-  
-
 Documented commands (type help <topic>):
-
 ========================================
-
 EOF all create destroy help quit show update
 
-  
-
 (hbnb)
-
 (hbnb)
-
 (hbnb) quit
-
 $
-
 ```
 
 in non-interactive mode:
@@ -72,41 +61,23 @@ in non-interactive mode:
 ```powershell
 
 $ echo 'help'  | ./console.py
-
 (hbnb)
-
 Documented commands (type help <topic>):
-
 ========================================
-
 EOF all create destroy help quit show update
 
-  
-
 (hbnb)
-
 $
-
 $ cat test_help
-
 help
-
 $
-
 $ cat test_help | ./console.py
-
 (hbnb)
-
 Documented commands (type help <topic>):
-
 ========================================
-
 EOF all create destroy help quit show update
 
-  
-
 (hbnb)
-
 ```
 
 ## Unittests

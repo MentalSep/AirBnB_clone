@@ -4,3 +4,4 @@ __pycache__
 .pytest_cache
 file.json
 htmlcov
+w3c_validator.py
